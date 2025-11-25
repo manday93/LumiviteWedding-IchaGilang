@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Icha & Gilang</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        /* === RESET & VARIABEL === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Skema Warna Tema Jawa */
+            --warna-emas: #e0c097;   /* Warna teks utama */
+            --warna-hijau: #a10f0f;  /* Warna tombol */
+            --warna-krem: #f4ecd8;   /* Warna teks sekunder */
+            --overlay-gelap: rgba(0, 0, 0, 0.6); /* Gelap background */
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Cinzel', serif; /* Font default serif klasik */
+            background-color: #1a1a1a00;
+            color: var(--warna-emas);
+        }
+
+        /* === CONTAINER UTAMA COVER === */
+        .cover-section {
+            position: relative;
+            height: 100vh; /* Full layar */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Konten di atas dan bawah */
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            overflow: hidden;
+        }
+
+        /* Background Gambar & Overlay Gelap */
+        .cover-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* GANTI URL GAMBAR DI SINI DENGAN FOTO PREWEDDING ANDA */
+            background-image: url('foto/GNT01203.JPG'); 
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+            filter: grayscale(30%) sepia(20%); /* Efek warna foto agak tua/klasik */
+        }
+
+        .cover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--overlay-gelap); /* Lapisan gelap agar teks terbaca */
+            z-index: -1;
+        }
+
+        /* === BAGIAN ATAS (JUDUL) === */
+        .cover-top {
+            margin-top: 30px;
+        }
+
+        .wedding-title {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--warna-krem);
+        }
+
+        .mempelai-nama {
+            /* FONT UTAMA YANG DIMINTA */
+            font-family: 'Chikybard', cursive; /* Ganti jadi nama yang kita daftarkan tadi */
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Penyesuaian ukuran font di layar HP kecil */
+        @media (max-width: 480px) {
+            .mempelai-nama {
+                font-size: 3rem;
+            }
+        }
+
+        .wedding-date {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-top: 1px solid var(--warna-emas);
+            border-bottom: 1px solid var(--warna-emas);
+            padding: 10px 0;
+            display: inline-block;
+        }
+
+        /* === BAGIAN BAWAH (TAMU & TOMBOL) === */
+        .cover-bottom {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .kepada-text {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: var(--warna-krem);
+        }
+
+        .tamu-nama {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        .maaf-text {
+            font-size: 0.7rem;
+            font-style: italic;
+            margin-bottom: 25px;
+            opacity: 0.8;
+        }
+
+        /* Styling Tombol */
+        .btn-buka {
+            background-color: var(--warna-hijau);
+            color: var(--warna-emas);
+            border: 1px solid var(--warna-emas);
+            padding: 12px 30px;
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-buka:hover {
+            background-color: var(--warna-emas);
+            color: var(--warna-hijau);
+            transform: translateY(-3px);
+        }
+        
+        .btn-buka i {
+            font-size: 1.1rem;
+        }
+
+        /* === STYLE BARU UNTUK HALAMAN HERO (ISI) === */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full layar HP */
+            
+            /* Ganti gambar background bagian dalam di sini */
+            background-image: url('foto/GNT01201.JPG'); 
+            
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center; /* Tengah horizontal */
+            align-items: center;     /* Tengah vertikal */
+            text-align: center;
+            color: var(--warna-emas);
+        }
+
+        .hero-overlay-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Gelap transparan supaya teks terbaca */
+            z-index: 1;
+        }
+
+        .hero-content-inner {
+            position: relative;
+            z-index: 2; /* Agar teks di atas lapisan gelap */
+            padding: 20px;
+        }
+
+        /* Container untuk konten sisa (Profil, Acara, dll) di bawah gambar */
+        .sisa-konten {
+            background-color: var(--warna-krem);
+            color: var(--warna-hijau);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        @keyframes naikTurun {
+            0%, 100% { transform: translateY(0); opacity: 0.5; }
+            50% { transform: translateY(10px); opacity: 1; }
+        }
+
+        /* Mendaftarkan Font Custom */
+        @font-face {
+            font-family: 'Chikybard';
+            src: url('chikybard/Chikybard.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* === STYLE BARU: TEMA JAVA CLASSIC (MAROON) === */
+        
+        /* Background Merah Marun */
+        .maroon-bg {
+            background-image: url('batik.jpg'); /* Pattern Batik Halus (Opsional) */
+            color: rgb(255, 255, 255);
+            padding: 40px 20px;
+            text-align: center;
+            min-height: 100vh; /* Agar full layar */
+            background-color: transparent;
+        }
+
+        /* Kotak Garis Emas */
+        .border-box {
+            border: 3px double var(--warna-emas); /* Garis ganda biar elegan */
+            border-radius: 15px;
+            padding: 40px 20px;
+            margin: 0 auto;
+            max-width: 600px;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.74); /* Sedikit gelap di dalam kotak */
+        }
+
+        /* Ikon Gunungan */
+        .gunungan-icon {
+            width: 80px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 5px rgba(224, 192, 151, 0.5));
+        }
+
+        /* Teks Emas Besar (Untuk Nama Tamu & Mempelai) */
+        .text-gold {
+            color: var(--warna-emas);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .salam-pembuka {
+            font-size: 0.8rem;
+            line-height: 1.8;
+            margin: 20px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .ayat-ar-rum {
+            font-size: 0.75rem;
+            font-style: italic;
+            margin-top: 30px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Styling Nama Mempelai di Bagian Formal */
+        .nama-mempelai-formal {
+            font-family: 'Cinzel', serif; /* Pakai font tegas sesuai gambar */
+            font-size: 1.8rem;
+            color: var(--warna-emas);
+            margin: 10px 0;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+        }
+        
+        .kata-dan {
+            font-family: 'Great Vibes', cursive; /* Font sambung untuk kata 'dan' */
+            font-size: 1.5rem;
+            color: white;
+            margin: 5px 0;
+        }
+
+        /* Judul Section Bride & Groom (Di bawah kotak) */
+        .bride-groom-title {
+            font-family: 'Chikybard', cursive; /* Font custom kamu tadi */
+            font-size: 3rem;
+            color: var(--warna-emas);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* === STYLE BAGIAN BRIDE & GROOM (OVERLAY GRADIENT) === */
+        
+        /* === BAGIAN BRIDE & GROOM (Background Polos) === */
+        .bride-section {
+            /* 1. Set jadi transparan agar background utama terlihat */
+            background-color: transparent; 
+            
+            /* 2. Pastikan tidak ada gambar lain yang menutupi */
+            background-image: none; 
+            
+            padding: 50px 20px;
+            width: 100%;
+            
+            /* Opsional: Tetap simpan garis pemisah emas jika mau */
+            border-top: 1px solid var(--warna-emas); 
+        }
+        /* === UPDATE: BAGIAN BAWAH JADI MAROON FULL === */
+        .sisa-konten {
+            background-color: #5d191f; /* Maroon Solid */
+            color: white; /* Teks jadi Putih */
+            padding: 50px 20px;
+            text-align: center;
+            
+            /* Hapus background krem lama */
+            /* background-color: var(--warna-krem); <--- HAPUS ATAU KOMENTARI INI */
+        }
+        /* Judul Section (Tengah) */
+        .judul-section-fancy {
+            text-align: center; /* <--- INI KUNCINYA */
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--warna-emas);
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            width: 100%; /* Pastikan lebar full agar bisa di tengah */
+        }
+
+        /* Container Kartu Profil */
+        .profil-card-fancy {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 300px; /* Tinggi kartu tetap */
+            margin: 0 auto 30px; /* Jarak antar kartu */
+            border-radius: 30px; /* Sudut melengkung besar */
+            overflow: hidden; /* Agar gambar tidak keluar kotak */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            
+            /* Setting Gambar Background */
+            background-size: cover;
+            background-position: center right;
+            /* Filter Hitam Putih pada foto (Sesuai contoh) */
+            filter: grayscale(100%); 
+            transition: all 0.5s ease;
+        }
+        
+        /* Efek saat di-hover: Foto jadi berwarna */
+        .profil-card-fancy:hover {
+            filter: grayscale(0%);
+        }
+
+/* === PERBAIKAN GRADIENT AGAR FOTO TERLIHAT === */
+        .profil-overlay-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+            /* --- BAGIAN INI YANG DIUBAH --- */
+            /* Penjelasan:
+               - 25%: Warna marun solid hanya sampai 25% lebar kartu (kiri).
+               - 50%: Di tengah-tengah, warnanya sudah memudar jadi agak transparan (0.5).
+               - 85%: Di bagian kanan, sudah benar-benar bening (0).
+            */
+            background: linear-gradient(90deg, 
+                #5d191f 25%, 
+                rgba(93, 25, 31, 0.5) 50%, 
+                rgba(93, 25, 31, 0) 85%);
+            /* ----------------------------- */
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 30px;
+            /* Padding kanan ditambah agar teks tidak terlalu mepet ke tengah */
+            padding-right: 120px; 
+            text-align: left;
+            z-index: 2;
+        }
+
+        /* Dekorasi Garis Emas Tipis (Line Art Wayang/Bunga) */
+        /* Ini opsional, membuat efek watermark di belakang teks */
+        .profil-overlay-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 50%; height: 100%;
+            /* Ganti url ini dengan gambar wayang transparan jika punya */
+            background-image: url('https://www.transparenttextures.com/patterns/batik-pattern.png'); 
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .nama-fancy {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--warna-emas);
+            line-height: 1.2;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .gelar-fancy {
+            font-size: 1.2rem;
+            color: var(--warna-emas);
+        }
+
+        .ket-ortu {
+            font-size: 0.8rem;
+            color: white;
+            margin-top: 10px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .nama-ortu-fancy {
+            font-size: 0.9rem;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .ig-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            border-bottom: 1px solid var(--warna-emas); /* Garis bawah */
+            padding-bottom: 3px;
+            width: fit-content;
+        }
+        
+        .ig-btn i {
+            font-size: 1rem;
+        }
+
+        /* Simbol & Besar */
+        .simbol-dan {
+            text-align: center; /* <--- INI KUNCINYA */
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: var(--warna-emas);
+            margin: 20px 0;
+            display: block; /* Pastikan dia dianggap balok full satu baris */
+        }
+
+        /* === STYLE BAGIAN OUR JOURNEY (BENTUK KUBAH) === */
+        .journey-section {
+            padding: 50px 20px; /* Padding saya tambah dikit biar lega */
+            
+            /* --- GANTI WARNA DENGAN GAMBAR DI SINI --- */
+            /* Pastikan nama filenya sesuai dengan yang ada di folder foto Anda */
+            background-image: url('batik.jpg'); 
+            
+            /* Agar gambar memenuhi lebar layar & posisinya pas */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            /* Agar tetap rapi di tengah */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .journey-card {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            
+            /* Bentuk Kubah */
+            border-radius: 200px 200px 0 0; 
+            
+            border: 3px solid var(--warna-emas); 
+            padding: 60px 30px 40px; 
+            text-align: center;
+            color: white;
+            
+            /* === GANTI JADI HITAM TRANSPARAN DI SINI === */
+            /* rgba(0, 0, 0, 0.6) artinya: Warna Hitam dengan kegelapan 60% */
+            background-color: rgba(0, 0, 0, 0.438);
+            
+            /* Opsional: Efek Blur (Kaca Buram) */
+            /* Ini bikin background di belakang kartu jadi agak nge-blur, teks makin jelas */
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        /* Icon Wayang di Tengah Atas */
+        .journey-icon {
+            width: 200px; /* Sesuaikan ukuran */
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 2px var(--warna-emas));
+        }
+
+        .journey-title {
+            font-family: 'Great Vibes', cursive; /* Atau 'Chikybard' */
+            font-size: 3rem;
+            color: var(--warna-emas);
+            margin-bottom: 30px;
+        }
+
+        .story-item {
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            text-align: center; /* Bisa justify kalau mau rata kanan kiri */
+        }
+
+        .story-year {
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            color: var(--warna-emas);
+            font-size: 1.1rem;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        /* === HIASAN JAWA PADA KARTU PROFIL === */
+
+        /* 1. Memastikan area gradient siap menampung hiasan */
+        .profil-overlay-gradient {
+            position: relative; /* Penting agar hiasan berada di dalam kotak ini */
+            z-index: 2;
+            overflow: hidden; /* Agar hiasan tidak keluar dari sudut melengkung */
+            /* Menambah sedikit padding atas bawah agar ornamen samping terlihat lega */
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        /* 2. Lapisan Motif Batik Transparan di Belakang Teks */
+        .profil-overlay-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* --- GANTI URL INI DENGAN GAMBAR BATIK ANDA SENDIRI --- */
+            /* Contoh motif parang rusak yang halus */
+            background-image: url('https://www.transparenttextures.com/patterns/batik-pattern.png');
+            /* ----------------------------------------------------- */
+            background-size: 300px; /* Sesuaikan ukuran motifnya */
+            background-repeat: repeat;
+            opacity: 0.15; /* SANGAT PENTING: Semakin kecil, semakin samar (0.1 - 0.2 ideal) */
+            z-index: -1; /* Taruh di belakang teks */
+            mix-blend-mode: overlay; /* Agar warnanya menyatu dengan merah marun */
+        }
+
+        /* 3. (Opsional) Ornamen Garis Emas Vertikal di Kiri Teks */
+        /* Ini memberi kesan seperti pilar pendopo di samping nama */
+        .profil-overlay-gradient::after {
+            content: '';
+            position: absolute;
+            top: 15%; /* Mulai agak ke bawah */
+            left: 15px; /* Jarak dari pinggir kiri kartu */
+            height: 70%; /* Tinggi garis */
+            width: 3px; /* Ketebalan garis */
+            background-color: var(--warna-emas);
+            border-radius: 5px;
+            /* Membuat ujung garis sedikit runcing/ornamental */
+            border-top: 5px solid var(--warna-emas);
+            border-bottom: 5px solid var(--warna-emas);
+            box-shadow: 0 0 5px rgba(224, 192, 151, 0.5); /* Efek bersinar */
+        }
+
+        /* Penyesuaian agar teks tidak nabrak garis ornamen baru */
+        .nama-fancy, .ket-ortu, .nama-ortu-fancy, .ig-btn {
+            position: relative;
+            z-index: 2; /* Pastikan teks di atas motif batik */
+            margin-left: 10px; /* Geser sedikit ke kanan menjauhi garis ornamen */
+        }
+
+        /* === SETTING BACKGROUND TETAP (FIXED) UNTUK SELURUH ISI UNDANGAN === */
+        #isiUndangan {
+            /* 1. Pasang Gambar */
+            background-image: url('foto/GNT01201.JPG');
+
+            /* 2. KUNCI AGAR TETAP/FIXED SAAT DI-SCROLL (Ini rahasianya) */
+            background-attachment: fixed;
+
+            /* 3. Agar gambar memenuhi layar & rapi */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* 4. Pastikan wadah ini minimal setinggi layar */
+            min-height: 100vh;
+            
+            /* Tambahan: Warna teks default jadi putih agar terbaca di atas foto gelap */
+            color: white; 
+        }
+
+        /* === STYLE OUR GALLERY (SWIPER 3D) === */
+        .gallery-section {
+            padding: 50px 0 80px;
+            text-align: center;
+            /* Background transparan agar foto background utama terlihat */
+            background-color: transparent; 
+            overflow: hidden; /* Agar slider tidak melebar keluar layar */
+        }
+
+        .gallery-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--warna-emas);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .gallery-subtitle {
+            font-family: 'Cinzel', serif;
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        /* Ukuran Container Slider */
+        .swiper {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+
+        /* Ukuran Kartu Foto */
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px; /* Lebar foto */
+            height: 400px; /* Tinggi foto */
+            border-radius: 15px;
+            /* Bingkai Emas Ganda ala Jawa */
+            border: 4px double var(--warna-emas);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+            background-color: #000;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px; /* Sedikit lebih kecil dari border luar */
+            /* Efek sepia dikit biar klasik, kalau mau warna asli hapus ini */
+            filter: sepia(20%) contrast(110%);
+        }
+
+        /* Dot Navigasi di bawah */
+        .swiper-pagination-bullet {
+            background-color: white;
+            opacity: 0.5;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: var(--warna-emas);
+            opacity: 1;
+        }
+
+        /* === STYLE WEDDING DAY (KARTU LENGKUNG) === */
+        .wedding-day-section {
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            /* Background transparan biar foto utama kelihatan */
+            background-color: transparent; 
+        }
+
+        .wd-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: var(--warna-emas);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        .wd-desc {
+            font-size: 0.8rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Container Grid untuk 2 Kartu (Akad & Resepsi) */
+        .event-grid {
+            display: flex;
+            flex-wrap: wrap; /* Agar turun ke bawah di HP */
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Style Dasar Kartu */
+        .event-card {
+            flex: 1;
+            min-width: 300px; /* Lebar minimal kartu */
+            background-color: rgba(0, 0, 0, 0.6); /* Hitam Transparan */
+            border: 1px solid var(--warna-emas);
+            padding: 50px 20px;
+            position: relative;
+            backdrop-filter: blur(3px); /* Efek kaca buram */
+        }
+
+        /* RAHASIA BENTUK LENGKUNG */
+        /* Kartu Kiri (Akad): Lengkung di Kiri Atas */
+        .akad-card {
+            border-radius: 100px 0 0 0; 
+        }
+        
+        /* Kartu Kanan (Resepsi): Lengkung di Kanan Atas */
+        .resepsi-card {
+            border-radius: 0 100px 0 0;
+        }
+
+        /* Typography di dalam kartu */
+        .event-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--warna-emas);
+            margin-bottom: 20px;
+        }
+
+        .event-date {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .event-time {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .event-place {
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .event-address {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        /* Tombol Garis Bawah (Lihat Lokasi) */
+        .btn-line {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+            border-bottom: 2px solid white; /* Garis bawah putih */
+            transition: all 0.3s;
+        }
+
+        .btn-line i {
+            margin-right: 5px;
+        }
+
+        .btn-line:hover {
+            color: var(--warna-emas);
+            border-bottom-color: var(--warna-emas);
+        }
+
+        /* === BAGIAN LIVE STREAMING & FILTER (KOTAK BAWAH) === */
+        .extra-info-box {
+            margin: 20px auto 0;
+            max-width: 900px; /* Samakan lebar dengan grid atas */
+            border: 1px solid var(--warna-emas);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px 20px;
+            border-radius: 0 0 20px 20px; /* Lengkung sedikit di bawah */
+            backdrop-filter: blur(3px);
+        }
+
+        .extra-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--warna-emas);
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        /* === SECTION SAVE THE DATE (COUNTDOWN) === */
+        .save-date-section {
+            padding: 60px 20px;
+            text-align: center;
+            
+            /* Background Batik */
+            background-image: url('batik.jpg'); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            
+            /* Overlay tipis agar tulisan terbaca jika batiknya terang */
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.438);
+        }
+
+        .std-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--warna-emas);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        /* Bingkai Foto Utama */
+        .frame-foto-utama {
+            position: relative; /* Penting untuk posisi countdown */
+            width: 100%;
+            max-width: 400px; /* Lebar maksimal foto */
+            margin: 0 auto 50px; /* Jarak bawah */
+            border: 3px solid var(--warna-emas); /* Bingkai Emas Luar */
+            padding: 10px; /* Jarak antara bingkai dan foto */
+            border-radius: 15px;
+        }
+
+        .foto-utama-std {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            filter: sepia(10%); /* Efek sedikit klasik */
+        }
+
+        /* Container Countdown (Nempel di bawah foto) */
+        .countdown-container {
+            position: absolute;
+            bottom: -30px; /* Menggantung di bawah foto */
+            left: 50%;
+            transform: translateX(-50%); /* Agar pas di tengah */
+            
+            display: flex;
+            gap: 10px;
+            width: 90%; /* Lebar countdown */
+            justify-content: center;
+        }
+
+        /* Kotak Angka Waktu */
+        .cd-box {
+            background-color: #5d191f; /* Warna Maroon */
+            border: 1px solid var(--warna-emas);
+            border-radius: 5px;
+            padding: 10px 5px;
+            flex: 1; /* Agar ukuran sama rata */
+            color: white;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        }
+
+        .cd-angka {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: block;
+            color: var(--warna-emas);
+        }
+
+        .cd-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        /* Tombol Ingatkan Acara */
+        .btn-ingatkan {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .btn-ingatkan:hover {
+            background-color: var(--warna-emas);
+            color: #5d191f;
+            border-color: var(--warna-emas);
+        }
+
+        /* === STYLE WEDDING GIFT (AMPLOP DIGITAL) === */
+        .gift-section {
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            
+            /* Ganti jadi Merah Marun Solid */
+            background-color: #5d191f; 
+            
+            /* Hapus efek kaca buram karena warna solid */
+            backdrop-filter: none; 
+            
+            margin-top: 0; /* Menempel rapat dengan section atasnya */
+            
+            /* Opsional: Tambahkan border atas emas sebagai pemisah */
+            border-top: 2px solid var(--warna-emas);
+        }
+
+        .gift-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--warna-emas);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        .gift-desc {
+            font-size: 0.9rem;
+            margin: 0 auto 40px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* Tampilan Tab Transfer */
+        .gift-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .tab-item {
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .tab-active {
+            color: white;
+            border-bottom: 3px solid white; /* Garis bawah putih */
+        }
+
+        .tab-inactive {
+            color: rgba(255,255,255,0.5); /* Warna redup */
+            border-bottom: 3px solid transparent;
+        }
+
+        /* Container Kartu Bank */
+        .bank-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left; /* Teks rata kiri biar rapi */
+        }
+
+        .bank-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Logo kiri, Copy kanan */
+            padding: 20px 0;
+            border-bottom: 1px solid white; /* Garis pemisah antar bank */
+        }
+
+        /* Agar garis terakhir hilang */
+        .bank-item:last-child {
+            border-bottom: 2px solid white; /* Penutup bawah tebal */
+        }
+        
+        /* Baris penutup atas */
+        .bank-item:first-child {
+            border-top: 2px solid white; /* Penutup atas tebal (opsional) */
+        }
+
+        .bank-logo {
+            width: 80px; /* Ukuran logo bank */
+            height: auto;
+            background-color: white; /* Kotak putih biar logo kelihatan */
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .bank-details {
+            flex: 1; /* Mengisi ruang tengah */
+            color: white;
+        }
+
+        .bank-name {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--warna-emas); /* Nama Bank warna emas */
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .rekening-num {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .owner-name {
+            font-size: 0.9rem;
+        }
+
+        /* Tombol Copy */
+        .btn-copy {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            margin-left: 10px;
+            transition: color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .btn-copy span {
+            font-size: 0.6rem;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .btn-copy:hover {
+            color: var(--warna-emas);
+        }
+
+        /* Animasi saat dicopy */
+        .copied-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--warna-hijau);
+            color: var(--warna-emas);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            z-index: 1000;
+            display: none; /* Sembunyi dulu */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        /* === STYLE TOMBOL BUKA-TUTUP GIFT === */
+        
+        /* Tombol Pemicu Utama */
+        .btn-toggle-gift {
+            background-color: var(--warna-emas);
+            color: #5d191f; /* Teks Maroon */
+            border: 2px solid var(--warna-emas);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-toggle-gift:hover {
+            background-color: transparent;
+            color: var(--warna-emas);
+            transform: scale(1.05);
+        }
+
+        /* Container Bank (Awalnya Sembunyi) */
+        #bankListContainer {
+            display: none; /* RAHASIA: Awalnya tidak terlihat */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Class untuk memunculkan (dipanggil lewat JS) */
+        .show-bank {
+            display: block !important;
+            animation: slideDown 0.5s forwards;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* === STYLE BAGIAN WISHES (FIX) === */
+        .wishes-section {
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            border-top: 1px solid var(--warna-emas);
+
+            /* Background Batik dengan Overlay Gelap */
+            background-image: url('batik.jpg'); 
+            background-size: cover;
+            background-position: center;
+            box-shadow: inset 0 0 0 2000px rgba(93, 25, 31, 0.85); /* Maroon Gelap Transparan */
+        }
+
+        /* Foto Pemanis (Bentuk Kubah) */
+        .wish-img-frame {
+            width: 150px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border: 2px solid var(--warna-emas);
+            padding: 5px;
+            border-radius: 100px 100px 20px 20px; 
+        }
+
+        .wish-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 95px 95px 15px 15px;
+            filter: sepia(30%);
+        }
+
+        .wish-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: var(--warna-emas);
+            margin-bottom: 10px;
+        }
+
+        .wish-desc {
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Form Input */
+        .form-wrapper {
+            max-width: 500px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        .input-label {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--warna-emas);
+            margin-bottom: 8px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .custom-input {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1); /* Putih Transparan */
+            border: 1px solid var(--warna-emas);
+            padding: 12px;
+            color: white;
+            font-family: sans-serif;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .custom-input:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(224, 192, 151, 0.3);
+        }
+
+        .btn-kirim-wish {
+            background-color: var(--warna-emas);
+            color: #5d191f;
+            border: none;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 12px 30px;
+            border-radius: 50px;
+            margin-top: 20px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+
+        .btn-kirim-wish:hover {
+            transform: scale(1.02);
+            background-color: white;
+        }
+
+        /* Daftar Ucapan (Scrollable) */
+        .wishes-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(224, 192, 151, 0.3);
+        }
+
+        .total-ucapan {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            color: var(--warna-emas);
+            font-weight: bold;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+
+        .wish-list-scroll {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        /* Custom Scrollbar */
+        .wish-list-scroll::-webkit-scrollbar { width: 5px; }
+        .wish-list-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+        .wish-list-scroll::-webkit-scrollbar-thumb { background: var(--warna-emas); border-radius: 10px; }
+
+        .wish-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--warna-emas);
+        }
+
+        .wisher-name {
+            font-weight: bold;
+            font-size: 1rem;
+            color: var(--warna-emas);
+            margin-bottom: 5px;
+        }
+        
+        .wisher-msg {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: white;
+            font-style: italic;
+        }
+
+        .wish-time {
+            display: block;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 8px;
+            text-align: right;
+        }
+
+        /* === STYLE FOOTER (PENUTUP) === */
+        .footer-section {
+            padding: 80px 20px 40px; /* Padding atas besar biar lega */
+            background-color: #5d191f; /* Maroon Solid */
+            color: white;
+            text-align: center;
+            border-top: 1px solid var(--warna-emas);
+            position: relative;
+        }
+
+        .closing-msg {
+            font-size: 0.8rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .salam-penutup {
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        .wayang-footer {
+            width: 100px; /* Ukuran Gunungan */
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 5px rgba(224, 192, 151, 0.5));
+        }
+
+        .kami-bahagia {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .couple-footer {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--warna-emas);
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .keluarga-text {
+            font-size: 0.9rem;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .copyright {
+            font-size: 0.7rem;
+            opacity: 0.6;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        .logo-bawah {
+            width: 40px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* === STYLE MUSIK PLAYER (CD BERPUTAR) === */
+        .music-box {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            z-index: 9999; /* Paling atas agar tidak tertutup */
+            cursor: pointer;
+            
+            /* Bingkai Luar (Piringan Hitam/Emas) */
+            background-color: #333; 
+            border: 2px solid var(--warna-emas);
+            border-radius: 50%;
+            padding: 3px; /* Jarak antara bingkai dan foto */
+            box-shadow: 0 0 15px rgba(224, 192, 151, 0.6);
+            
+            /* Agar tombol ada efek transisi saat diklik */
+            transition: transform 0.3s;
+        }
+        
+        /* Foto CD di dalam */
+        .music-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%; /* Bulat sempurna */
+            display: block;
+            opacity: 0.9;
+        }
+
+        /* Ikon Not Balok Kecil (Hiasan) */
+        .music-icon-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px black;
+            pointer-events: none; /* Agar klik tembus ke tombol */
+        }
+
+        /* ANIMASI PUTAR (ROTATING) */
+        @keyframes putar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Class ini akan dipasang lewat JS saat lagu nyala */
+        .berputar {
+            animation: putar 4s linear infinite; /* Muter terus setiap 4 detik */
+        }
+        
+        /* Class saat lagu mati (stop muter) */
+        .berhenti {
+            animation: none;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="cover-section" id="coverSection">
+        <div class="cover-background"></div>
+        <div class="cover-overlay"></div>
+
+        <div class="cover-top">
+            <p class="wedding-title">The Wedding of</p>
+            <h1 class="mempelai-nama">Icha & Gilang</h1>
+            <p class="wedding-date">Sabtu, 20 Desember 2025</p>
+        </div>
+
+        <div class="cover-bottom">
+            <p class="kepada-text">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+            <h2 class="tamu-nama" id="nama-tamu">Tamu Undangan</h2>
+            <p class="maaf-text">Mohon maaf jika ada kesalahan penulisan nama dan gelar</p>
+            
+            <button class="btn-buka" onclick="bukaUndangan()">
+                <i class="fa-solid fa-envelope-open-text"></i> 
+                BUKA UNDANGAN
+            </button>
+        </div>
+    </section>
+    
+<section id="isiUndangan" style="display: none;">
+        
+        <div class="hero-section">
+            <div class="hero-overlay-inner"></div>
+            
+            <div class="hero-content-inner">
+                <p class="wedding-title" style="margin-bottom: 20px;">The Wedding of</p>
+                
+                <h1 class="mempelai-nama" style="font-size: 3.5rem;">Icha & Gilang</h1>
+                
+                <div style="margin-top: 20px; border-top: 1px solid var(--warna-emas); border-bottom: 1px solid var(--warna-emas); display: inline-block; padding: 10px 20px;">
+                    <p class="wedding-date" style="border: none; padding: 0;">Sabtu, 20 Desember 2025</p>
+                </div>
+                
+                <div style="margin-top: 50px; animation: naikTurun 1.5s infinite;">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="maroon-bg">
+            
+            <div class="border-box">
+                <img src="gunungan.png" alt="Gunungan" class="gunungan-icon">
+
+                <p style="font-size: 0.7rem; letter-spacing: 2px;">KEPADA YTH. BAPAK/IBU/SAUDARA/I:</p>
+                
+                <h2 class="text-gold" id="nama-tamu-isi" style="margin: 15px 0; font-size: 1.5rem;">Tamu Undangan</h2>
+
+                <br>
+                
+                <div class="salam-pembuka">
+                    ASSALAMUALAIKUM<br>
+                    WARAHMATULLAHI WABARAKATUH.
+                </div>
+
+                <p style="font-size: 0.7rem; margin-bottom: 20px;">
+                    DENGAN MEMOHON RAHMAT DAN RIDHA ALLAH SUBHANAHU WA TA'ALA, KAMI MENGUNDANG BAPAK/IBU/SAUDARA/I UNTUK BERKENAN MENGHADIRI ACARA PERNIKAHAN KAMI:
+                </p>
+
+                <h1 class="nama-mempelai-formal">ANISA RAHMAWATI (Icha)</h1>
+                <div class="kata-dan">dan</div>
+                <h1 class="nama-mempelai-formal">GILANG DWI RAMADHAN</h1>
+
+                <div class="ayat-ar-rum">
+                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+                    <br><br>
+                    - Q.S. Ar - Rum 21 -
+                </div>
+            </div>
+        </div>
+
+        <div class="bride-section">
+                
+                <h2 class="judul-section-fancy">Bride and Groom</h2>
+
+                <div class="profil-card-fancy" style="background-image: url('foto/icha.jpg');">
+                    <div class="profil-overlay-gradient">
+                        
+                        <div class="nama-fancy">
+                            ANISA<br>
+                            RAHMAWATI<br><span class="gelar-fancy"> (Icha)</span>
+                        </div>
+
+                        <div class="ket-ortu">Putri Pertama dari</div>
+                        <div class="nama-ortu-fancy">
+                            Bapak Supriyatin<br>
+                            dan Ibu Nurvitasari
+                        </div>
+
+                        <!-- <a href="https://instagram.com/username_anda" target="_blank" class="ig-btn">
+                            <i class="fa-brands fa-instagram"></i> ichaxx
+                        </a> -->
+
+                    </div>
+                </div>
+
+                <div class="simbol-dan">&</div>
+
+                <div class="profil-card-fancy" style="background-image: url('foto/gilang.png');">
+                    <div class="profil-overlay-gradient">
+                        
+                        <div class="nama-fancy">
+                            GILANG<br>
+                            DWI<br>
+                            RAMADHAN</span>
+                        </div>
+
+                        <div class="ket-ortu">Putra Kedua dari</div>
+                        <div class="nama-ortu-fancy">
+                            Bapak Rohimudin Arief<br>
+                            dan Mariam Rusmiyati
+
+                        </div>
+
+                        <!--<a href="https://instagram.com/username_pria" target="_blank" class="ig-btn">
+                            <i class="fa-brands fa-instagram"></i> gilanggxx
+                        </a>-->
+
+                    </div>
+                </div>
+
+            </div>
+        
+        <section class="journey-section">
+                <div class="journey-card">
+                    
+                    <img src="wayang.png" alt="Wayang" class="journey-icon">
+
+                    <h2 class="journey-title">Our Journey</h2>
+
+                    <div class="story-item">
+                        <span class="story-year">Pertemuan - 2022</span>
+                        Tidak ada yang kebetulan di dunia ini. Semua sudah tersusun dengan sangat  rapih,  oleh sang maha kuasa,kita tidak bisa memilih  kepada siapa kita akan jatuh cinta. Kami bertemu pertama kalinya tanpa sengaja.
+                    </div>
+
+                    <div class="story-item">
+                        <span class="story-year">Pendekatan - 2023</span>
+                        Katanya cinta akan tumbuh dengan kebersamaan,  sering  berjalannya waktu, kami menjalin hubungan.
+                    </div>
+
+                    <div class="story-item">
+                        <span class="story-year">Lamaran - 2025</span>
+                        Kehendak nya menuntun kami pada sebuah pertemuan yang tak di sangka hingga akhirnya  pada tanggal  <b>23 November  2025</b> membawa kami pada sebuah ikatan yang  di Ridhoi-Nya.
+                    </div>
+
+                    <div class="story-item">
+                        <span class="story-year">Pernikahan - 2025</span>
+                         Bukan karena  bertemu  lalu berjodoh, tapi karna berjodohlah kami bisa bertemu kami memutuskan untuk mengikrarkan janji suci pernikahan pada <b>20 Desember  2025</b>.<br>
+                         Sebagaimana  yang pertama Ali Bin Abi Thalib:" Apa yang menjadi takdirmu, akan menemukan   jalannya untuk  menemukanmu"
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="gallery-section">
+                
+                <h2 class="gallery-title">Our Gallery</h2>
+                <p class="gallery-subtitle">MOMEN KEBERSAMAAN KAMI</p>
+
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide">
+                            <img src="foto/GNT01201.JPG" alt="Foto 1">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="foto/icha.jpg" alt="Foto 2">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="foto/gilang.png" alt="Foto 3">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="foto/GNT01198.JPG" alt="Foto 4">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="foto/GNT01201.JPG" alt="Foto 5">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="foto/GNT01201.JPG" alt="Foto 1">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="foto/icha.jpg" alt="Foto 2">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="foto/gilang.png" alt="Foto 3">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="foto/GNT01198.JPG" alt="Foto 4">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="foto/GNT01201.JPG" alt="Foto 5">
+                        </div>
+                        
+                        </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </section>
+
+            <section class="wedding-day-section">
+        
+        <h2 class="wd-title">Wedding Day</h2>
+        <p class="wd-desc">
+            Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i dapat memberikan doa restu kepada kami dengan berkenan hadir dalam acara pernikahan kami yang akan dilaksanakan pada:
+        </p>
+
+        <div class="event-grid">
+            
+            <div class="event-card akad-card">
+                <h3 class="event-name">Akad Nikah</h3>
+                
+                <p class="event-date">SABTU</p>
+                <p class="event-date">20 DESEMBER 2025</p>
+                <p class="event-time">09.00 WIB - SELESAI</p>
+                
+                <h4 class="event-place">MASJID JAMI AT-TAQWA</h4>
+                <p class="event-address">Jl. Kayu Manis, Cirimekar, Kec. Cibinong, Kabupaten Bogor, Jawa Barat 16917</p>
+                
+                <a href="https://maps.app.goo.gl/zWeVvnpU1tzJ7AKP7" target="_blank" class="btn-line">
+                    <i class="fa-solid fa-location-dot"></i> LIHAT LOKASI
+                </a>
+            </div>
+
+            <div class="event-card resepsi-card">
+                <h3 class="event-name">Resepsi</h3>
+                
+                <p class="event-date">SABTU</p>
+                <p class="event-date">20 DESEMBER 2025</p>
+                <p class="event-time">11.00 WIB - SELESAIB</p>
+                
+                <h4 class="event-place">KEDIAMAN MEMPELAI WANITA</h4>
+                <p class="event-address"> Jl. Kayu Manis No.41, Cibinong, Kec. Cibinong, Kabupaten Bogor, Jawa Barat 16911</p>
+                
+                <a href="https://maps.app.goo.gl/ho1NL3jDDjqC1X3w5" target="_blank" class="btn-line">
+                    <i class="fa-solid fa-location-dot"></i> LIHAT LOKASI
+                </a>
+            </div>
+
+        </div>
+
+        <!--<div class="extra-info-box">
+            
+            <h3 class="extra-title">Live Streaming</h3>
+            <p class="wd-desc" style="margin-bottom: 20px;">
+                Kami juga berencana untuk mempublikasikan akad nikah kami secara virtual melalui Live Streaming yang bisa diikuti melalui link berikut:
+            </p>
+            <a href="https://youtube.com/linkanda" target="_blank" class="btn-line">
+                <i class="fa-solid fa-video"></i> SAKSIKAN LIVE
+            </a>
+
+            <br><br><hr style="width: 50%; margin: 20px auto; border-color: var(--warna-emas); opacity: 0.5;"><br>
+
+            <h3 class="extra-title">Wedding Filter</h3>
+            <p class="wd-desc" style="margin-bottom: 20px;">
+                Bantu kami mengabadikan momen bahagia di acara kami dengan Instagram filter di stories. Save filter yang telah kami sediakan dan tag akun mempelai.
+            </p>
+            <a href="https://instagram.com/filterlink" target="_blank" class="btn-line">
+                <i class="fa-brands fa-instagram"></i> GUNAKAN FILTER INSTAGRAM
+            </a>
+
+        </div>-->
+
+    </section>
+
+    <section class="save-date-section">
+        
+        <h2 class="std-title">Save The Date</h2>
+
+        <div class="frame-foto-utama">
+            <img src="foto/GNT01201.JPG" alt="Prewed" class="foto-utama-std">
+            
+            <div class="countdown-container">
+                <div class="cd-box">
+                    <span class="cd-angka" id="hari">00</span>
+                    <span class="cd-label">Hari</span>
+                </div>
+                <div class="cd-box">
+                    <span class="cd-angka" id="jam">00</span>
+                    <span class="cd-label">Jam</span>
+                </div>
+                <div class="cd-box">
+                    <span class="cd-angka" id="menit">00</span>
+                    <span class="cd-label">Menit</span>
+                </div>
+                <div class="cd-box">
+                    <span class="cd-angka" id="detik">00</span>
+                    <span class="cd-label">Detik</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The+Wedding+of+Icha+%26+Gilang&dates=20251220T080000/20251220T130000&details=Acara+Pernikahan+Icha+dan+Gilang&location=Lokasi+Pernikahan" target="_blank" class="btn-ingatkan">
+            <i class="fa-regular fa-calendar-check"></i> INGATKAN ACARA
+        </a>
+
+    </section>
+
+    <section class="gift-section">
+        
+        <h2 class="gift-title">Wedding Gift</h2>
+        <p class="gift-desc">
+            Kehadiran Bapak/Ibu/Saudara/i merupakan hadiah terindah. Namun, apabila hendak memberikan tanda kasih, silakan klik tombol di bawah ini:
+        </p>
+
+        <button class="btn-toggle-gift" onclick="toggleBank()">
+            <i class="fa-solid fa-gift"></i> Kirim Hadiah / Transfer
+            <i class="fa-solid fa-chevron-down" id="iconPanah"></i>
+        </button>
+
+        <div id="bankListContainer" class="bank-container">
+            
+            <div class="bank-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bank_Mandiri_logo_2016.svg/1280px-Bank_Mandiri_logo_2016.svg.png" alt="BSI" class="bank-logo">
+                <div class="bank-details">
+                    <div class="bank-name">BANK MANDIRI</div>
+                    <div class="rekening-num" id="rek1">1330030158281</div>
+                    <div class="owner-name">a.n ANISA RAHMAWATI</div>
+                </div>
+                <button class="btn-copy" onclick="salinTeks('rek1')">
+                    <i class="fa-regular fa-copy"></i><span>Salin</span>
+                </button>
+            </div>
+
+            <div class="bank-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/1280px-Logo_dana_blue.svg.png" alt="BCA" class="bank-logo">
+                <div class="bank-details">
+                    <div class="bank-name">E-WALLET DANA</div>
+                    <div class="rekening-num" id="rek2">0895355335929</div>
+                    <div class="owner-name">ANISA RAHMAWATI</div>
+                </div>
+                <button class="btn-copy" onclick="salinTeks('rek2')">
+                    <i class="fa-regular fa-copy"></i><span>Salin</span>
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div id="toastNotif" class="copied-msg">
+        <i class="fa-solid fa-check"></i> Nomor Rekening Berhasil Disalin!
+    </div>
+
+    <section class="wishes-section">
+        
+        <div class="wish-img-frame">
+            <img src="foto/GNT01201.JPG" alt="Couple" class="wish-img">
+        </div>
+
+        <h2 class="wish-title">Send Your Wishes</h2>
+        <p class="wish-desc">
+            Doa restu Anda merupakan karunia yang sangat berarti bagi kami.
+        </p>
+
+        <div class="form-wrapper">
+            <label class="input-label">Nama Anda</label>
+            <input type="text" id="namaPengirim" class="custom-input" placeholder="Tulis nama...">
+
+            <label class="input-label">Ucapan & Doa</label>
+            <textarea id="pesanPengirim" class="custom-input" rows="4" placeholder="Tulis doa restu..."></textarea>
+
+            <button class="btn-kirim-wish" onclick="kirimPesan()">
+                <i class="fa-solid fa-paper-plane"></i> KIRIM UCAPAN
+            </button>
+        </div>
+
+        <div class="wishes-container">
+            <div class="total-ucapan"><i class="fa-solid fa-comments"></i> <span id="jumlahUcapan">0</span> Ucapan Terkumpul</div>
+            
+            <div class="wish-list-scroll" id="containerListUcapan">
+                <div style="text-align: center; margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">
+                    Memuat ucapan...
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer-section">
+        
+        <p class="closing-msg">
+            Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dalam hari bahagia kami. Terima kasih atas segala ucapan, doa, dan perhatian yang diberikan.
+            <br><br>
+            Sampai jumpa di hari bahagia kami.
+        </p>
+
+        <p class="salam-penutup">
+            WASSALAMUALAIKUM<br>
+            WARAHMATULLAHI WABARAKATUH
+        </p>
+
+        <img src="gunungan.png" alt="Wayang" class="wayang-footer">
+
+        <p class="kami-bahagia">Kami yang berbahagia:</p>
+        
+        <h1 class="couple-footer">Icha & Gilang</h1>
+        
+        <p class="keluarga-text">Beserta Keluarga</p>
+
+        <div class="copyright">
+            <p>&copy; 2025 Lumivite — All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+    </section>
+
+
+    <script>
+        // === FUNGSI 1: Mengambil Nama Tamu dari URL ===
+        // Kode ini berjalan otomatis saat halaman dimuat.
+        window.onload = function() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const namaTamu = urlParams.get('to');
+                    
+                    if (namaTamu) {
+                        // Ganti nama di Cover Depan
+                        document.getElementById("nama-tamu").innerText = namaTamu;
+                        
+                        // Ganti nama di Bagian Isi (Kotak Maroon) - Tambahkan baris ini
+                        const elemenIsi = document.getElementById("nama-tamu-isi");
+                        if(elemenIsi) {
+                            elemenIsi.innerText = namaTamu;
+                        }
+                    }
+                };
+
+        // === FUNGSI 2: Aksi Tombol Buka Undangan ===
+        function bukaUndangan() {
+            console.log("Tombol ditekan, membuka undangan...");
+            
+            // 1. Putar Musik (Opsional - aktifkan jika sudah ada file audio)
+            // var audio = new Audio('musik-anda.mp3');
+            // audio.play();
+            
+            // 2. Efek Animasi Menghilangkan Cover
+            const cover = document.getElementById('coverSection');
+            cover.style.transition = "all 0.8s ease-in-out";
+            cover.style.opacity = "0";
+            cover.style.transform = "translateY(-100vh)"; // Geser ke atas
+            
+            // 3. Setelah animasi selesai, sembunyikan cover & tampilkan isi
+            setTimeout(() => {
+                cover.style.display = 'none';
+                document.getElementById('isiUndangan').style.display = 'block';
+                
+                // Agar halaman bisa di-scroll kembali setelah cover hilang
+                document.body.style.overflow = 'auto';
+            }, 800); // Waktu tunggu sama dengan durasi transisi (0.8s)
+        }
+        
+        // Kunci scroll saat di halaman cover
+        document.body.style.overflow = 'hidden';
+
+        // === FUNGSI COPY REKENING ===
+        function salinTeks(idElement) {
+            // 1. Ambil teks dari elemen (nomor rekening)
+            var teks = document.getElementById(idElement).innerText;
+            
+            // 2. Salin ke clipboard browser
+            navigator.clipboard.writeText(teks).then(function() {
+                
+                // 3. Tampilkan notifikasi "Berhasil Disalin"
+                var toast = document.getElementById("toastNotif");
+                toast.style.display = "block";
+                toast.style.animation = "fadeIn 0.5s";
+
+                // 4. Hilangkan notifikasi setelah 2 detik
+                setTimeout(function() {
+                    toast.style.display = "none";
+                }, 2000);
+            }, function(err) {
+                alert('Gagal menyalin: ', err);
+            });
+        }
+
+        // === FUNGSI BUKA TUTUP DAFTAR REKENING ===
+        function toggleBank() {
+            var bankList = document.getElementById("bankListContainer");
+            var icon = document.getElementById("iconPanah");
+
+            // Cek apakah sedang sembunyi atau tampil
+            if (bankList.style.display === "none" || bankList.style.display === "") {
+                // Jika sembunyi -> TAMPILKAN
+                bankList.style.display = "block";
+                bankList.classList.add("show-bank");
+                
+                // Ubah panah jadi ke atas
+                icon.classList.remove("fa-chevron-down");
+                icon.classList.add("fa-chevron-up");
+            } else {
+                // Jika tampil -> SEMBUNYIKAN
+                bankList.style.display = "none";
+                bankList.classList.remove("show-bank");
+                
+                // Ubah panah jadi ke bawah
+                icon.classList.remove("fa-chevron-up");
+                icon.classList.add("fa-chevron-down");
+            }
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow", /* Efek 3D Kartu Tumpuk */
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto", /* Ukuran otomatis menyesuaikan layar */
+            loop: true, /* Bisa diputar terus menerus */
+            
+            /* Settingan efek 3D */
+            coverflowEffect: {
+                rotate: 0,      /* Tidak diputar miring */
+                stretch: 0,
+                depth: 100,     /* Kedalaman 3D */
+                modifier: 2.5,  /* Seberapa ekstrim efeknya */
+                slideShadows: true, /* Bayangan di foto samping */
+            },
+            
+            /* Autoplay (Gerak sendiri setiap 3 detik) */
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+
+<script>
+        // === SETTING TANGGAL ACARA DI SINI ===
+        // Format: "Bulan(Inggris) Tanggal, Tahun Jam:Menit:Detik"
+        var targetDate = new Date("Dec 20, 2025 08:00:00").getTime();
+
+        // Fungsi ini akan dijalankan setiap 1 detik (1000ms)
+        var x = setInterval(function() {
+
+            // 1. Ambil waktu sekarang saat ini
+            var now = new Date().getTime();
+
+            // 2. Hitung selisih jarak waktu (Acara - Sekarang)
+            var distance = targetDate - now;
+
+            // 3. Rumus Matematika untuk menghitung Hari, Jam, Menit, Detik
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // 4. Masukkan hasilnya ke dalam kotak HTML
+            // Pastikan ID di HTML Anda adalah "hari", "jam", "menit", "detik"
+            document.getElementById("hari").innerText = days;
+            document.getElementById("jam").innerText = hours;
+            document.getElementById("menit").innerText = minutes;
+            document.getElementById("detik").innerText = seconds;
+
+            // 5. Jika waktu hitung mundur habis (Sudah lewat tanggal main)
+            if (distance < 0) {
+                clearInterval(x);
+                // Ubah semua angka jadi 0
+                document.getElementById("hari").innerText = "0";
+                document.getElementById("jam").innerText = "0";
+                document.getElementById("menit").innerText = "0";
+                document.getElementById("detik").innerText = "0";
+            }
+        }, 1000);
+    </script>
+
+    <script type="module">
+        // 1. Import Library Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        // ============================================================
+        // 2. PASTE KODE 'const firebaseConfig' ANDA DI BAWAH INI !!!
+        // ============================================================
+        const firebaseConfig = {
+            apiKey: "AIzaSyA2ATvfkzkmQXRhkEMwPwx4lZcx1Jriurk",
+            authDomain: "undanganichagilang.firebaseapp.com",
+            databaseURL: "https://undanganichagilang-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "undanganichagilang",
+            storageBucket: "undanganichagilang.firebasestorage.app",
+            messagingSenderId: "1023665119012",
+            appId: "1:1023665119012:web:7b948929f9c2e7fc2d1db1",
+            measurementId: "G-18Z1TLYPLR"
+            };
+        // ============================================================
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // FUNGSI 1: KIRIM PESAN
+        window.kirimPesan = function() {
+            const nama = document.getElementById("namaPengirim").value;
+            const pesan = document.getElementById("pesanPengirim").value;
+
+            if (nama.trim() === "" || pesan.trim() === "") {
+                alert("Mohon isi nama dan ucapan terlebih dahulu.");
+                return;
+            }
+
+            // Ubah tombol jadi 'Mengirim...' biar user tau proses jalan
+            const btn = document.querySelector(".btn-kirim-wish");
+            btn.innerHTML = "Mengirim...";
+            btn.disabled = true;
+
+            // Push data ke Firebase
+            push(ref(db, 'ucapan'), {
+                nama: nama,
+                pesan: pesan,
+                waktu: Date.now() // Format Timestamp
+            }).then(() => {
+                alert("Terima kasih! Ucapan berhasil dikirim.");
+                document.getElementById("namaPengirim").value = "";
+                document.getElementById("pesanPengirim").value = "";
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> KIRIM UCAPAN';
+                btn.disabled = false;
+            }).catch((error) => {
+                alert("Gagal mengirim: " + error.message);
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> KIRIM UCAPAN';
+                btn.disabled = false;
+            });
+        }
+
+        // FUNGSI 2: BACA DATA (REALTIME)
+        const ucapanList = document.getElementById("containerListUcapan");
+        const jumlahElem = document.getElementById("jumlahUcapan");
+
+        onValue(ref(db, 'ucapan'), (snapshot) => {
+            ucapanList.innerHTML = ""; // Reset list
+            
+            const data = snapshot.val();
+            let count = 0;
+
+            if (data) {
+                // Ubah object ke array & Sortir (Yang baru di atas)
+                const dataArray = Object.values(data).sort((a, b) => b.waktu - a.waktu);
+
+                dataArray.forEach((item) => {
+                    count++;
+                    
+                    // Format Tanggal (Contoh: 20 Des, 14:30)
+                    const date = new Date(item.waktu);
+                    const tgl = date.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' });
+                    const jam = date.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+
+                    // Template HTML Item
+                    const itemHTML = `
+                        <div class="wish-item">
+                            <div class="wisher-name">
+                                ${item.nama} <i class="fa-solid fa-circle-check" style="margin-left:5px;"></i>
+                            </div>
+                            <p class="wisher-msg">${item.pesan}</p>
+                            <span class="wish-time">${tgl} • ${jam} WIB</span>
+                        </div>
+                    `;
+                    ucapanList.innerHTML += itemHTML;
+                });
+            } else {
+                ucapanList.innerHTML = '<div style="text-align:center; opacity:0.6; margin-top:20px;">Belum ada ucapan. Jadilah yang pertama!</div>';
+            }
+            
+            // Update jumlah
+            jumlahElem.innerText = count;
+        });
+    </script>
+</body>
+<audio id="laguAudio" loop>
+        <source src="jawa.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="music-box" id="tombolMusik" onclick="putarMusik()">
+        <img src="foto/GNT01201.JPG" alt="Music Disc" class="music-img">
+        
+        <div class="music-icon-overlay">
+            <i class="fa-solid fa-music"></i>
+        </div>
+    </div>
+
+    <script>
+        // === VARIABEL GLOBAL ===
+        var lagu = document.getElementById("laguAudio");
+        var tombol = document.getElementById("tombolMusik");
+        var isPlaying = false;
+
+        // === FUNGSI 1: KLIK TOMBOL CD (PAUSE/PLAY MANUAL) ===
+        function putarMusik() {
+            if (isPlaying) {
+                // Kalau lagi nyala -> Matikan
+                lagu.pause();
+                tombol.classList.remove("berputar"); // Stop animasi
+                isPlaying = false;
+            } else {
+                // Kalau lagi mati -> Nyalakan
+                lagu.play();
+                tombol.classList.add("berputar"); // Mulai animasi
+                isPlaying = true;
+            }
+        }
+
+        // === FUNGSI 2: UPDATE FUNGSI "BUKA UNDANGAN" YANG LAMA ===
+        // Cari fungsi bukaUndangan() yang sudah ada sebelumnya, 
+        // lalu tambahkan kode play lagu di dalamnya.
+        
+        function bukaUndangan() {
+            console.log("Membuka undangan...");
+            
+            // --- TAMBAHAN BARU: NYALAKAN MUSIK OTOMATIS ---
+            lagu.play();
+            tombol.classList.add("berputar");
+            isPlaying = true;
+            // ---------------------------------------------
+
+            // ... Kode animasi buka cover yang lama biarkan saja di sini ...
+            const cover = document.getElementById('coverSection');
+            cover.style.transition = "all 0.8s ease-in-out";
+            cover.style.opacity = "0";
+            cover.style.transform = "translateY(-100vh)";
+            
+            setTimeout(() => {
+                cover.style.display = 'none';
+                document.getElementById('isiUndangan').style.display = 'block';
+                document.body.style.overflow = 'auto';
+            }, 800);
+        }
+    </script>
+</html>
